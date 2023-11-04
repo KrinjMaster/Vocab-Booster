@@ -8,7 +8,7 @@
 
   onMount(() => {
     setUserOnMount()
-    console.log($useUser)
+
     if ($useUser === null) {
       goto('/login')
     }
