@@ -5,7 +5,7 @@
 </script>
 
 <section
-  class="w-fit h-screen flex flex-col items-center justify-center gap-1.5 m-auto"
+  class="w-fit h-full flex flex-col items-center justify-center gap-1.5 m-auto"
 >
   <h1 class="text-6xl font-bold">
     Hello,
