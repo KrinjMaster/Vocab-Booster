@@ -5,6 +5,7 @@
   import { goto } from '$app/navigation'
   import { useUser } from '../store/user'
   import { setUserOnMount } from '../store/auth'
+  import { NotificationDisplay } from '@beyonk/svelte-notifications'
 
   onMount(() => {
     setUserOnMount()
@@ -15,5 +16,6 @@
   })
 </script>
 
+<NotificationDisplay />
 <Header />
 <slot />

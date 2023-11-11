@@ -22,8 +22,8 @@
   }
 </script>
 
-<div class="navbar bg-base-100 justify-between px-10">
-  <a class="btn btn-ghost normal-case text-xl" href="/">Word slam</a>
+<div class="navbar bg-transparent justify-between px-10 absolute top-0">
+  <a class="btn btn-ghost normal-case text-xl" href="/">Vocab Booster</a>
   {#if $useUser}
     <div class="flex gap-2.5 font-bold">
       <h1 class="text-xl">{$useUser.name}</h1>
