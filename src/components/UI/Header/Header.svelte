@@ -22,14 +22,9 @@
   }
 </script>
 
-{#if $useUser}
-  <div
-    class="navbar absolute top-0 bg-transparent bg-base-100 justify-between px-10"
-  >
-    <a
-      class="text-xl font-bold hover:text-primary hover:font-extrabold transition-all duration-150 ease-in"
-      href="/">Word slam</a
-    >
+<div class="navbar bg-transparent justify-between px-10 absolute top-0">
+  <a class="btn btn-ghost normal-case text-xl" href="/">Vocab Booster</a>
+  {#if $useUser}
     <div class="flex gap-2.5 font-bold">
       <h1 class="text-xl">{$useUser.name}</h1>
       <button class="avatar" on:click={handleOpenUserProfile}>
@@ -64,9 +59,5 @@
         </div>
       </div>
     </dialog>
-  </div>
-{:else}
-  <div class="navbar bg-base-100 justify-between px-10">
-    <h1 class="normal-case text-xl font-bold">Word slam</h1>
-  </div>
-{/if}
+  {/if}
+</div>

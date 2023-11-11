@@ -16,7 +16,7 @@ class AuthService {
       })
     }
 
-    return result as RecordAuthResponse 
+    return result as RecordAuthResponse
   }
 
   getCurrentUser(): AuthModel {

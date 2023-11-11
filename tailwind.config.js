@@ -2,25 +2,25 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {}
+    extend: {},
   },
   daisyui: {
     themes: [
       {
-        dark: {
-          "primary": "#865DFF",
-          "secondary": "#E384FF",
-          "accent": "#9575DE",
-          "neutral": "#2a323c",
-          "base-100": "#08010d",
-          "info": "#3abff8",
-          "success": "#36d399",
-          "warning": "#fbbd23",
-          "error": "#f87272",
+        dark_main: {
+          primary: '#f3f4f6',
+          secondary: '#4b5563',
+          accent: '#f97316',
+          neutral: '#201f32',
+          'base-100': '#090909',
+          info: '#4764e6',
+          success: '#72e4cf',
+          warning: '#fde047',
+          error: '#e11d48',
         },
       },
     ],
     base: true,
   },
-  plugins: [require("daisyui")]
-};
+  plugins: [require('daisyui')],
+}

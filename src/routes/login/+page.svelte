@@ -4,7 +4,7 @@
   import YandexLoginBtn from '../../components/UI/YandexLoginBtn.svelte'
 </script>
 
-<section
+<div
   class="w-fit h-screen flex flex-col items-center justify-center gap-1.5 m-auto"
 >
   <h1 class="text-6xl font-bold">
@@ -23,8 +23,4 @@
     <GithubLoginBtn />
     <YandexLoginBtn />
   </div>
-  <div class="divider font-bold">or</div>
-  <button class="btn btn-primary btn-outline w-full rounded-full">
-    Continue without account
-  </button>
-</section>
+</div>
