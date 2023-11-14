@@ -9,7 +9,7 @@ export default {
       {
         dark_main: {
           primary: '#f3f4f6',
-          secondary: '#4b5563',
+          secondary: '#242323',
           accent: '#f97316',
           neutral: '#201f32',
           'base-100': '#090909',

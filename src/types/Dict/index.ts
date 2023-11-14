@@ -1,6 +1,6 @@
 export interface Dictionary {
   words: DictionaryResponse[][]
-  complition: string[]
+  collectionName: string
 }
 
 export interface DictionaryResponse {
@@ -15,7 +15,6 @@ export interface DictionaryResponse {
     text: string
     audio: string
   }[]
-  origin: string
   meanings: {
     partOfSpeech: string
     definitions: [
@@ -33,4 +32,26 @@ export interface ResponseError {
   title: string
   message: string
   resolution: string
+}
+
+export interface CollectionParams {
+  name: string
+  words: {
+    word: string
+    phonetics: {
+      text: string
+      audio: string
+    }[]
+    meanings: {
+      partOfSpeech: string
+      definitions: [
+        {
+          definition: string
+          example: string
+          synonyms: string[]
+          antonyms: string[]
+        },
+      ]
+    }[]
+  }[][]
 }

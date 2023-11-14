@@ -1,9 +1,10 @@
 <script>
-  import SearchBar from '../components/UI/SearchBar/SearchBar.svelte'
-  import WordsList from '../components/UI/WordsList/WordsList.svelte'
+  import Modal from '../components/UI/Modals/CollectionCreation/Modal.svelte'
 </script>
 
-<section class="w-full h-fit flex flex-col items-center px-10">
-  <SearchBar />
-  <WordsList />
+<section
+  class="w-screen h-screen flex flex-col items-center justify-center px-10"
+>
+  <h1 class="text-5xl font-extrabold">Create new collection</h1>
+  <Modal />
 </section>

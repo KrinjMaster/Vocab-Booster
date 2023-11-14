@@ -7,6 +7,7 @@
   export let wordIndex: number
   export let word: DictionaryResponse[]
 
+  let isExpanded = true
   let index = 0
 
   const handleChangeMeaning = () => {
@@ -28,14 +29,20 @@
     notifier.success('✅ Remove word!', 3000)
   }
 
-  console.log(word)
+  const handleExpandCard = () => {
+    isExpanded ? (isExpanded = false) : (isExpanded = true)
+  }
 </script>
 
-<div class="card w-[42rem] bg-transparent border-2 border-primary p-1.5">
+<div
+  class={`card w-full bg-transparent border-2 border-secondary ${
+    isExpanded ? 'h-fit' : 'h-20'
+  } overflow-hidden p-1.5`}
+>
   <div class="card-body flex flex-col p-2.5">
     <div class="flex gap-1.5">
       <h1 class="text-5xl font-bold uppercase">{word[index].word}</h1>
-      {#if word[index].phonetics[0].audio}
+      {#if word[index].phonetics[0] && word[index].phonetics[0].audio}
         <button
           class="btn btn-primary btn-outline border-none"
           on:click={playWordSound}
@@ -43,6 +50,14 @@
           <Icon icon="icon-park-outline:sound-wave" width="30" />
         </button>
       {/if}
+      <button
+        class={`btn btn-primary btn-outline border-none ${
+          isExpanded ? '' : 'rotate-180'
+        }`}
+        on:click={handleExpandCard}
+      >
+        <Icon icon="uil:arrow-up" width="30" />
+      </button>
       <button
         class="btn btn-square btn-sm btn-primary btn-outline ml-auto"
         on:click={handleRemoveWord}
@@ -54,7 +69,7 @@
       <div class="divider m-0"></div>
       <div class="flex gap-1.5 w-full text-xl font-extrabold text-info">
         {meaning.partOfSpeech}
-        {#if word[index].phonetics}
+        {#if word[index].phonetics[0]}
           {word[index].phonetics[0].text}
         {/if}
       </div>

@@ -1,11 +1,15 @@
 import { writable, type Writable } from 'svelte/store'
-import type { Dictionary, DictionaryResponse } from '../../types/Dict'
+import type {
+  CollectionParams,
+  Dictionary,
+  DictionaryResponse,
+} from '../../types/Dict'
 import { dictService } from '../../services/dict.service'
 import { error } from '@sveltejs/kit'
 
 export const useDict: Writable<Dictionary> = writable({
   words: [],
-  complition: [],
+  collectionName: '',
 })
 
 export const getNewWord = async (word: string) => {
@@ -44,4 +48,19 @@ export function remWord(wordIndex: number) {
     ...value,
     words: value.words.filter((_, index) => index !== wordIndex),
   }))
+}
+
+export async function addNewCollection(
+  collection: CollectionParams,
+  userId: string
+) {
+  try {
+    const wordsCollection = await dictService.addNewCollection(collection)
+
+    await dictService.updateWordsCollections(wordsCollection.id, userId)
+
+    return wordsCollection
+  } catch (err) {
+    console.log(err)
+  }
 }

@@ -35,7 +35,7 @@
     </div>
     <dialog id="user-modal" class="modal">
       <div
-        class="modal-box flex flex-col gap-2.5 bg-base-100 border-2 border-primary"
+        class="modal-box flex flex-col gap-2.5 bg-base-100 border-2 border-secondary"
       >
         <div class="flex items-center justify-start gap-5">
           <div class="avatar">
@@ -45,15 +45,16 @@
           </div>
           <div>
             <h3 class="font-bold text-3xl">{$useUser.name}</h3>
-            <h3 class="font-bold text-xl">{$useUser.username}</h3>
           </div>
         </div>
         <div class="modal-action flex justify-between">
-          <button class="btn btn-primary btn-wide" on:click={handleLogOut}>
+          <button
+            class="btn btn-primary btn-outline btn-wide"
+            on:click={handleLogOut}
+          >
             Log out
           </button>
           <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
             <button class="btn btn-error btn-outline">Close</button>
           </form>
         </div>
