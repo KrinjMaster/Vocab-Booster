@@ -1,13 +1,13 @@
 import { writable, type Writable } from 'svelte/store'
 import type {
   CollectionParams,
-  Dictionary,
+  Collection,
   DictionaryResponse,
 } from '../../types/Dict'
 import { dictService } from '../../services/dict.service'
 import { error } from '@sveltejs/kit'
 
-export const useDict: Writable<Dictionary> = writable({
+export const useCollectionCreation: Writable<Collection> = writable({
   words: [],
   collectionName: '',
 })
@@ -37,14 +37,14 @@ export const getNewWord = async (word: string) => {
 }
 
 export function addWord(data: DictionaryResponse[]) {
-  useDict.update((value: Dictionary) => ({
+  useCollectionCreation.update((value: Collection) => ({
     ...value,
     words: [...value.words, data],
   }))
 }
 
 export function remWord(wordIndex: number) {
-  useDict.update((value: Dictionary) => ({
+  useCollectionCreation.update((value: Collection) => ({
     ...value,
     words: value.words.filter((_, index) => index !== wordIndex),
   }))
@@ -63,4 +63,18 @@ export async function addNewCollection(
   } catch (err) {
     console.log(err)
   }
+}
+
+export function renameCollection(name: string) {
+  useCollectionCreation.update((value: Collection) => ({
+    ...value,
+    collectionName: name,
+  }))
+}
+
+export function clearCollection() {
+  useCollectionCreation.set({
+    collectionName: '',
+    words: [],
+  })
 }

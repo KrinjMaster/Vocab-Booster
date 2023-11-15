@@ -1,9 +1,8 @@
 <script lang="ts">
   import { createForm } from 'svelte-forms-lib'
   import { object, string } from 'yup'
-  import { addNewCollection, getNewWord, useDict } from '../../../store/dict'
+  import { getNewWord } from '../../../store/dict'
   import { notifier } from '@beyonk/svelte-notifications'
-  import { useUser } from '../../../store/user'
 
   const { form, handleChange, handleSubmit } = createForm({
     initialValues: {
@@ -23,27 +22,6 @@
       }
     },
   })
-
-  const handleAddWordsColleciton = () => {
-    if ($useUser) {
-      addNewCollection(
-        {
-          name: 'myCollection',
-          words: $useDict.words.map((array) =>
-            array.map((word) => {
-              return {
-                word: word.word,
-                meanings: word.meanings,
-                phonetics: word.phonetics,
-              }
-            })
-          ),
-        },
-        $useUser.id
-      )
-      notifier.success('✅ Added new collection!', 2500)
-    }
-  }
 </script>
 
 <form on:submit={handleSubmit} class="flex gap-2.5">

@@ -26,12 +26,14 @@
 
   const handleRemoveWord = () => {
     remWord(wordIndex)
-    notifier.success('✅ Remove word!', 3000)
+    notifier.success('✅ Removed word!', 3000)
   }
 
   const handleExpandCard = () => {
     isExpanded ? (isExpanded = false) : (isExpanded = true)
   }
+
+  console.log(word[0].meanings[0].definitions)
 </script>
 
 <div

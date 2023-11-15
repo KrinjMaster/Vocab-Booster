@@ -1,4 +1,4 @@
-export interface Dictionary {
+export interface Collection {
   words: DictionaryResponse[][]
   collectionName: string
 }
