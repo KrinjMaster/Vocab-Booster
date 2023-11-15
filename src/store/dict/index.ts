@@ -4,7 +4,7 @@ import type {
   Collection,
   DictionaryResponse,
 } from '../../types/Dict'
-import { dictService } from '../../services/dict.service'
+import { collectionService } from '../../services/dict.service'
 import { error } from '@sveltejs/kit'
 
 export const useCollectionCreation: Writable<Collection> = writable({
@@ -13,7 +13,7 @@ export const useCollectionCreation: Writable<Collection> = writable({
 })
 
 export const getNewWord = async (word: string) => {
-  const result = await dictService.getWord(word)
+  const result = await collectionService.getWord(word)
 
   if (result instanceof Array) {
     addWord(
@@ -55,9 +55,9 @@ export async function addNewCollection(
   userId: string
 ) {
   try {
-    const wordsCollection = await dictService.addNewCollection(collection)
+    const wordsCollection = await collectionService.addNewCollection(collection)
 
-    await dictService.updateWordsCollections(wordsCollection.id, userId)
+    await collectionService.updateWordsCollections(wordsCollection.id, userId)
 
     return wordsCollection
   } catch (err) {

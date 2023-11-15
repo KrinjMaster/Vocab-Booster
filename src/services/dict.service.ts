@@ -6,7 +6,7 @@ import type {
 import { getDictUrl } from '../utils/getDictUrl'
 import { pb } from './api'
 
-class DictService {
+class CollectionService {
   async getWord(word: string): Promise<DictionaryResponse[] | ResponseError> {
     const apiUrl = getDictUrl(word)
     return await fetch(apiUrl).then((response) => {
@@ -31,4 +31,4 @@ class DictService {
   }
 }
 
-export const dictService = new DictService()
+export const collectionService = new CollectionService()
