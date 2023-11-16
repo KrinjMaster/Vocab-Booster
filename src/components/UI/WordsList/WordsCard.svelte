@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from '@iconify/svelte'
-  import type { DictionaryResponse } from '../../../types/Dict'
-  import { remWord } from '../../../store/dict'
+  import type { DictionaryResponse } from '../../../types/Collection'
+  import { remWord } from '../../../store/collectionCreation'
   import { notifier } from '@beyonk/svelte-notifications'
 
   export let wordIndex: number

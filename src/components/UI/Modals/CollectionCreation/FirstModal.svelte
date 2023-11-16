@@ -4,7 +4,7 @@
   import {
     renameCollection,
     useCollectionCreation,
-  } from '../../../../store/dict'
+  } from '../../../../store/collectionCreation'
   import Icon from '@iconify/svelte'
 
   const { form, handleChange, handleSubmit } = createForm({

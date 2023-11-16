@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useCollectionCreation } from '../../../store/dict'
+  import { useCollectionCreation } from '../../../store/collectionCreation'
   import WordsCard from './WordsCard.svelte'
 </script>
 

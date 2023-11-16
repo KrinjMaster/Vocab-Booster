@@ -14,11 +14,7 @@
   }
 
   const handleOpenUserProfile = () => {
-    const userModal = document.getElementById('user-modal')
-
-    if (userModal instanceof HTMLDialogElement) {
-      userModal.showModal()
-    }
+    goto(`/${$useUser?.id}`)
   }
 </script>
 
@@ -33,32 +29,5 @@
         </div>
       </button>
     </div>
-    <dialog id="user-modal" class="modal">
-      <div
-        class="modal-box flex flex-col gap-2.5 bg-base-100 border-2 border-secondary"
-      >
-        <div class="flex items-center justify-start gap-5">
-          <div class="avatar">
-            <div class="w-24 rounded-full">
-              <img src={$useUser.avatar} alt="user-avatar" />
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-3xl">{$useUser.name}</h3>
-          </div>
-        </div>
-        <div class="modal-action flex justify-between">
-          <button
-            class="btn btn-primary btn-outline btn-wide"
-            on:click={handleLogOut}
-          >
-            Log out
-          </button>
-          <form method="dialog">
-            <button class="btn btn-error btn-outline">Close</button>
-          </form>
-        </div>
-      </div>
-    </dialog>
   {/if}
 </div>

@@ -6,17 +6,18 @@
     addNewCollection,
     clearCollection,
     useCollectionCreation,
-  } from '../../../../store/dict/'
+  } from '../../../../store/collectionCreation'
   import { useUser } from '../../../../store/user'
   import { notifier } from '@beyonk/svelte-notifications'
+  import type { Word } from '../../../../types/Collection'
 
   const handleAddCollection = () => {
     if ($useUser) {
       addNewCollection(
         {
           name: $useCollectionCreation.collectionName,
-          words: $useCollectionCreation.words.map((array) =>
-            array.map((word) => {
+          words: $useCollectionCreation.words.map((array: any) =>
+            array.map((word: Word) => {
               return {
                 word: word.word,
                 meanings: word.meanings,

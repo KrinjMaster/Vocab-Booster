@@ -1,8 +1,8 @@
 <script lang="ts">
   import Icon from '@iconify/svelte'
-  import { oauthLogin, setIsLoggedIn } from '../../store/auth'
+  import { oauthLogin, setIsLoggedIn } from '../../../store/auth'
   import { goto } from '$app/navigation'
-  import { setUser } from '../../store/user'
+  import { setUser } from '../../../store/user'
 
   const handleLogin = async (provider: string) => {
     try {

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createForm } from 'svelte-forms-lib'
   import { object, string } from 'yup'
-  import { getNewWord } from '../../../store/dict'
+  import { getNewWord } from '../../../store/collectionCreation'
   import { notifier } from '@beyonk/svelte-notifications'
 
   const { form, handleChange, handleSubmit } = createForm({
