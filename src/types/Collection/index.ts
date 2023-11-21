@@ -58,8 +58,8 @@ export interface CollectionParams {
   words: Word[]
 }
 
-export interface WordsCollections {
+export interface WordsCollection {
   id: string
   name: string
-  words: Words[]
+  words: Word[]
 }

@@ -1,5 +1,3 @@
-import type { CollectionParams } from '../Dict'
-
 export interface Auth {
   isLoggedIn: boolean
 }

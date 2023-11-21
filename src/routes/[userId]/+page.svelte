@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { useUser } from '../../store/user'
-  import { setCollections } from '../../store/collections'
-  import CollectionList from '../../components/UI/CollectionsList/CollectionList.svelte'
+  import { useUser } from '$lib/store/user'
+  import { setCollections } from '$lib/store/collections'
+  import CollectionList from '$lib/UI/CollectionsList/CollectionList.svelte'
 
   export let data
 

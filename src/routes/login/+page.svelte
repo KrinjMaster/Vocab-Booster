@@ -1,7 +1,7 @@
 <script lang="ts">
-  import GithubLoginBtn from '../../components/UI/LoginButtons/GithubLoginBtn.svelte'
-  import GoogleLoginBtn from '../../components/UI/LoginButtons/GoogleLoginBtn.svelte'
-  import YandexLoginBtn from '../../components/UI/LoginButtons/YandexLoginBtn.svelte'
+  import GithubLoginBtn from '$lib/UI/LoginButtons/GithubLoginBtn.svelte'
+  import GoogleLoginBtn from '$lib/UI/LoginButtons/GoogleLoginBtn.svelte'
+  import YandexLoginBtn from '$lib/UI/LoginButtons/YandexLoginBtn.svelte'
 </script>
 
 <div

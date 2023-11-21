@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import { onMount } from 'svelte'
-  import { useUser } from '../../store/user'
+  import { useUser } from '$lib/store/user'
   import { notifier } from '@beyonk/svelte-notifications'
   import { goto } from '$app/navigation'
 

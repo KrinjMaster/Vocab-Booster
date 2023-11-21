@@ -1,11 +1,11 @@
-import { userService } from '../../services/user.service'
-import type { WordsCollectionsResponse } from '../../types/Collection'
+import { userService } from '$lib/api/user'
+import type { WordsCollection } from '$src/types/Collection'
 
 export async function load({ params }: { params: { userId: string } }) {
   const result = await userService.getUser(params.userId)
   return {
     words: result.expand?.wordsCollections.map(
-      (collection: WordsCollectionsResponse) => {
+      (collection: WordsCollection) => {
         return {
           id: collection.id,
           name: collection.name,

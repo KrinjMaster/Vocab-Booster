@@ -12,6 +12,12 @@
 		"typeRoots": [
 			"/src/app.d.ts",
 		],
+    "paths": {
+      "$lib": [ "./src/lib/" ],
+      "$lib/*": [ "./src/lib/*" ],
+      "$src": [ "./src/" ],
+      "$src/*": [ "./src/*" ],
+    },
 		"sourceMap": true,
 		"importsNotUsedAsValues":"remove",
 		"strict": true,

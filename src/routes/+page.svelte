@@ -1,5 +1,5 @@
-<script>
-  import Modal from '../components/UI/Modals/CollectionCreation/Modal.svelte'
+<script lang="ts">
+  import Modal from '$lib/UI/Modals/CollectionCreation/Modal.svelte'
 </script>
 
 <section
