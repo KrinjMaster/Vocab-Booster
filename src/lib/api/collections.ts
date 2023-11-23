@@ -6,6 +6,7 @@ import type {
 import { getDictUrl } from '$lib/utils/getDictUrl'
 import { pb } from '$lib/api/pb'
 import type { RecordModel } from 'pocketbase'
+import type { CollectionResponse } from '$src/types/Collection'
 
 class CollectionService {
   async getWord(word: string): Promise<DictionaryResponse[] | ResponseError> {
@@ -29,9 +30,15 @@ class CollectionService {
   async updateWordsCollections(
     collectionId: string,
     userId: string
-  ): Promise<any> {
+  ): Promise<RecordModel> {
     return await pb.collection('users').update(userId, {
       'wordsCollections+': collectionId,
+    })
+  }
+
+  async getCollectionById(collectionId: string): Promise<CollectionResponse> {
+    return await pb.collection('wordsCollections').getOne(collectionId, {
+      expand: 'author',
     })
   }
 }

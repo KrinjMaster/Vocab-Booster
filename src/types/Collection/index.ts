@@ -1,3 +1,5 @@
+import type { RecordModel } from 'pocketbase'
+
 export interface Collection {
   words: DictionaryResponse[][]
   collectionName: string
@@ -40,16 +42,16 @@ export interface Word {
     text: string
     audio: string
   }[]
-  meanings: {
-    partOfSpeech: string
-    definitions: [
-      {
-        definition: string
-        example: string
-        synonyms: string[]
-        antonyms: string[]
-      },
-    ]
+  meanings: WordMeaning[]
+}
+
+export interface WordMeaning {
+  partOfSpeech: string
+  definitions: {
+    definition: string
+    example?: string
+    synonyms: string[]
+    antonyms: string[]
   }[]
 }
 
@@ -62,4 +64,12 @@ export interface WordsCollection {
   id: string
   name: string
   words: Word[]
+}
+
+export interface CollectionResponse extends RecordModel {
+  expand: {
+    author: RecordModel & WordsCollection
+  }
+  name: string
+  author: string
 }

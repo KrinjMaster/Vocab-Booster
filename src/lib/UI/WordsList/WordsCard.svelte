@@ -32,8 +32,6 @@
   const handleExpandCard = () => {
     isExpanded ? (isExpanded = false) : (isExpanded = true)
   }
-
-  console.log(word[0].meanings[0].definitions)
 </script>
 
 <div
