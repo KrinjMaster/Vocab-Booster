@@ -8,7 +8,7 @@ export default {
     themes: [
       {
         dark_main: {
-          primary: '#f3f4f6',
+          primary: '#865DFF',
           secondary: '#242323',
           accent: '#f97316',
           neutral: '#201f32',

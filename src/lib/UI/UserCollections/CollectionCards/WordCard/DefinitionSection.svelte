@@ -13,11 +13,12 @@
       definition++
     }
   }
-  console.log(meaning.definitions)
 </script>
 
 <div class="divider m-0"></div>
-<div class="flex gap-1.5 w-full text-3xl font-extrabold text-info items-center">
+<div
+  class="flex gap-1.5 w-full text-3xl font-extrabold text-primary-focus items-center"
+>
   {meaning.partOfSpeech}
   {#if phonetics}
     {phonetics}
@@ -36,7 +37,7 @@
     {meaning.definitions[definition].definition}
   </p>
   {#if meaning.definitions[definition].example}
-    <p class="text-xl text-info">
+    <p class="text-xl text-primary">
       {meaning.definitions[definition].example}
     </p>
   {/if}

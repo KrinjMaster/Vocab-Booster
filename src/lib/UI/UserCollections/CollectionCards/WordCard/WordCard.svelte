@@ -30,7 +30,7 @@
       <h1 class="text-7xl font-bold uppercase">{word[index].word}</h1>
       {#if word[index].phonetics[0] && word[index].phonetics[0].audio}
         <button
-          class="btn btn-primary btn-outline border-none h-20 w-20"
+          class="btn btn-outline border-none h-20 w-20"
           on:click={playWordSound}
         >
           <Icon icon="icon-park-outline:sound-wave" width="50" />
