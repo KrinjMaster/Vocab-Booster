@@ -21,4 +21,6 @@
 
 <FirstModal />
 <SecondModal />
-<button class="btn btn-info btn-lg" on:click={handleOpenModal}> Create </button>
+<button class="btn btn-primary btn-lg" on:click={handleOpenModal}>
+  Create new collection
+</button>

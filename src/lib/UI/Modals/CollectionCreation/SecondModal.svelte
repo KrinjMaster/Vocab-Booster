@@ -9,7 +9,7 @@
   } from '$lib/store/collectionCreation'
   import { useUser } from '$lib/store/user'
   import { notifier } from '@beyonk/svelte-notifications'
-  import type { Word } from '$src/types/Collection'
+  import type { Word } from '$lib/types/Collection'
 
   const handleAddCollection = () => {
     if ($useUser) {

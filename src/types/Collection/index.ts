@@ -63,7 +63,7 @@ export interface CollectionParams {
 export interface WordsCollection {
   id: string
   name: string
-  words: Word[]
+  words: Word[][]
 }
 
 export interface CollectionResponse extends RecordModel {

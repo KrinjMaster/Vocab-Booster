@@ -43,23 +43,18 @@
     <div class="flex gap-1.5">
       <h1 class="text-5xl font-bold uppercase">{word[index].word}</h1>
       {#if word[index].phonetics[0] && word[index].phonetics[0].audio}
-        <button
-          class="btn btn-primary btn-outline border-none"
-          on:click={playWordSound}
-        >
+        <button class="btn btn-outline border-none" on:click={playWordSound}>
           <Icon icon="icon-park-outline:sound-wave" width="30" />
         </button>
       {/if}
       <button
-        class={`btn btn-primary btn-outline border-none ${
-          isExpanded ? '' : 'rotate-180'
-        }`}
+        class={`btn  btn-outline border-none ${isExpanded ? '' : 'rotate-180'}`}
         on:click={handleExpandCard}
       >
         <Icon icon="uil:arrow-up" width="30" />
       </button>
       <button
-        class="btn btn-square btn-sm btn-primary btn-outline ml-auto"
+        class="btn btn-square btn-sm btn-outline ml-auto"
         on:click={handleRemoveWord}
       >
         <Icon icon="basil:cross-solid" width="30" />
@@ -67,7 +62,9 @@
     </div>
     {#each word[index].meanings as meaning (meaning.definitions[0].definition)}
       <div class="divider m-0"></div>
-      <div class="flex gap-1.5 w-full text-xl font-extrabold text-info">
+      <div
+        class="flex gap-1.5 w-full text-xl font-extrabold text-primary-focus"
+      >
         {meaning.partOfSpeech}
         {#if word[index].phonetics[0]}
           {word[index].phonetics[0].text}

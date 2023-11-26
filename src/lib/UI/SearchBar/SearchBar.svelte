@@ -33,5 +33,10 @@
     on:change={handleChange}
     bind:value={$form.word}
   />
-  <button class="btn btn-info btn-lg" type="submit">Add</button>
+  <button
+    class={`btn  btn-lg ${
+      $form.word.length < 1 ? 'btn-disabled' : 'btn-primary '
+    }`}
+    type="submit">Add</button
+  >
 </form>

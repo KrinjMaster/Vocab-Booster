@@ -41,6 +41,10 @@ class CollectionService {
       expand: 'author',
     })
   }
+
+  async deleteCollection(collectionId: string): Promise<boolean> {
+    return await pb.collection('wordsCollections').delete(collectionId)
+  }
 }
 
 export const collectionService = new CollectionService()

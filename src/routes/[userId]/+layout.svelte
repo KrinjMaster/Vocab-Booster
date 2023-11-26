@@ -7,12 +7,13 @@
 
   const params = $page.params
 
-  onMount(() => {
+  const handleCheckUser = () => {
     if ($useUser && params.userId !== $useUser.id) {
       goto('/')
       notifier.danger('You can not see other people profiles!', 5000)
     }
-  })
+  }
+  $: $useUser, handleCheckUser()
 </script>
 
 <slot />

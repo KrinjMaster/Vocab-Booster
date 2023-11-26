@@ -1,6 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
   import WordCard from '$lib/UI/UserCollections/CollectionCards/WordCard/WordCard.svelte'
+  import { handleDeleteCollection } from '$lib/store/collections/index.js'
   import { useUser } from '$lib/store/user/index.js'
   import { notifier } from '@beyonk/svelte-notifications'
   import Icon from '@iconify/svelte'
@@ -24,17 +25,28 @@
   const handleGotoProfile = () => {
     goto(`/${$useUser?.id}`)
   }
+
+  const handleDeleteWordCollection = (collectionId: string) => {
+    handleDeleteCollection(collectionId)
+    goto(`/${$useUser?.id}`)
+  }
 </script>
 
 <section class="flex flex-col h-screen w-screen pt-14 px-2 pb-2">
   <div class="navbar flex gap-2.5 items-center bg-transparent font-bold">
     <button
-      class="btn btn-primary btn-outline rounded-full -rotate-90 w-16 h-16"
+      class="btn btn-outline rounded-full -rotate-90 w-16 h-16"
       on:click={handleGotoProfile}
     >
       <Icon icon="uil:arrow-up" width="30" />
     </button>
     <h1 class="font-bold text-7xl">{data.name}</h1>
+    <button
+      class="btn btn-square btn-sm btn-outline ml-auto"
+      on:click={() => handleDeleteWordCollection(data.id)}
+    >
+      <Icon icon="mingcute:delete-fill" width="24" />
+    </button>
   </div>
   <div class="w-full h-full grid grid-cols-4">
     <div class="span-1 p-2 flex flex-col gap-1.5">
