@@ -41,9 +41,6 @@ jobs:
   release:
     needs: main
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'testing-library/svelte-testing-library' &&
-      contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha',
-      github.ref) && github.event_name == 'push' }}
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
@@ -52,8 +49,3 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
-        with:
-          useLockFile: false
