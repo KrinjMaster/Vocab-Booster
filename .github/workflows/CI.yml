@@ -4,7 +4,7 @@ on:
   push:
     branches: ['**']
   pull_request:
-    branches: [main]
+    branches: [main, development]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -40,7 +40,7 @@ jobs:
         if: always()
         with:
           name: report
-          path: .github/workflows/reports/
+          path: ${{ github.workspace }}/reports/
           retention-days: 30
   release:
     needs: main
