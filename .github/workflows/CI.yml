@@ -40,7 +40,7 @@ jobs:
         if: always()
         with:
           name: report
-          path: reports/
+          path: app/.github/workflows/reports/
           retention-days: 30
   release:
     needs: main
