@@ -9,7 +9,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint . --ext .js,.svelte --fix",
-    "validate": "npm-run-all lint"
+    "validate": "npm-run-all lint build"
   },
   "devDependencies": {
     "@beyonk/svelte-notifications": "^4.2.0",
