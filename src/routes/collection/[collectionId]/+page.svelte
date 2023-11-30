@@ -2,7 +2,6 @@
   import { goto } from '$app/navigation'
   import WordCard from '$lib/UI/UserCollections/CollectionCards/WordCard/WordCard.svelte'
   import { handleDeleteCollection } from '$lib/store/collections/index.js'
-  import { useUser } from '$lib/store/user/index.js'
   import { notifier } from '@beyonk/svelte-notifications'
   import Icon from '@iconify/svelte'
   import { onMount } from 'svelte'
@@ -23,12 +22,12 @@
   }
 
   const handleGotoProfile = () => {
-    goto(`/${$useUser?.id}`)
+    goto(`/${data.author}`)
   }
 
   const handleDeleteWordCollection = (collectionId: string) => {
     handleDeleteCollection(collectionId)
-    goto(`/${$useUser?.id}`)
+    goto(`/${data.author}`)
   }
 </script>
 

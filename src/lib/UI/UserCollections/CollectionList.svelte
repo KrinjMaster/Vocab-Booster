@@ -1,7 +1,5 @@
 <script lang="ts">
   import { useCollections } from '$lib/store/collections'
-
-  $: console.log($useCollections)
 </script>
 
 {#key $useCollections?.length}

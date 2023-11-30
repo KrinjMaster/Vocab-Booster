@@ -19,8 +19,6 @@
         avatar: meta?.avatarUrl,
       })
 
-      console.log(user)
-
       goto('/')
     } catch (err) {
       console.log(err)

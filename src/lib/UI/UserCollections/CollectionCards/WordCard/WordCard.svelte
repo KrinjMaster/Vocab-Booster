@@ -2,6 +2,7 @@
   import Icon from '@iconify/svelte'
   import type { Word } from '$src/types/Collection'
   import DefinitionSection from '$lib/UI/UserCollections/CollectionCards/WordCard/DefinitionSection.svelte'
+  import { getAllContexts } from 'svelte'
 
   export let word: Word[]
 
@@ -37,11 +38,9 @@
         </button>
       {/if}
     </div>
-    {#each word[index].meanings as meaning (meaning.partOfSpeech)}
+    {#each word[index].meanings as meaning, index (index)}
       <DefinitionSection
-        phonetics={word[index].phonetics[0]
-          ? word[index].phonetics[0].text
-          : null}
+        phonetics={word[index] ? word[index].phonetics[0].text : null}
         {meaning}
       />
     {/each}
