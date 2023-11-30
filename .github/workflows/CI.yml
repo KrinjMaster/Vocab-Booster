@@ -40,7 +40,7 @@ jobs:
         if: always()
         with:
           name: report
-          path: ${{ github.workspace }}/reports/
+          path: ${{ github.workspace }}/.github/workflows/reports/
           retention-days: 30
   release:
     needs: main
