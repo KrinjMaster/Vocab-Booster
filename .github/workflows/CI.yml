@@ -36,8 +36,12 @@ jobs:
         run: npm run validate
 
       - name: ⬆️ Upload coverage report
-        uses: codecov/codecov-action@v2
-
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: report
+          path: report/
+          retention-days: 30
   release:
     needs: main
     runs-on: ubuntu-latest
