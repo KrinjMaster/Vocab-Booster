@@ -23,4 +23,4 @@ To host db locally you would need to go to `~/Vocab-Booster/db/` and then run th
 ```
 
 ## Database
-for the database to work you would need to install [pocketbase](https://pocketbase.io) and download [database schema](https://github.com/KrinjMaster/Vocab-Booster/blob/development/pb_schema.json).
+for the database to work you would need to install [pocketbase](https://pocketbase.io) and import [database schema](https://github.com/KrinjMaster/Vocab-Booster/blob/development/pb_schema.json).
