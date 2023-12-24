@@ -21,5 +21,5 @@ To host db locally you would need to go to `~/Vocab-Booster/db/` and then run th
  # if you want to see more logs
  ./pocketbase serve --debug
 ```
+
 ## Admin page
-To log into admin page in database use this email `developer@admin.com` and password `2asd234basd`
