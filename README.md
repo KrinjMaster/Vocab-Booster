@@ -22,4 +22,5 @@ To host db locally you would need to go to `~/Vocab-Booster/db/` and then run th
  ./pocketbase serve --debug
 ```
 
-## Admin page
+## Database
+for the database to work you would need to install ``pocketbase`` and download database schema.
