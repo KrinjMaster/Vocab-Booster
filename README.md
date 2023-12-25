@@ -21,5 +21,7 @@ To host db locally you would need to go to `~/Vocab-Booster/db/` and then run th
  # if you want to see more logs
  ./pocketbase serve --debug
 ```
-## Admin page
-To log into admin page in database use this email `developer@admin.com` and password `2asd234basd`
+
+## Database
+
+for the database to work you would need to install [pocketbase](https://pocketbase.io) and import [database schema](https://github.com/KrinjMaster/Vocab-Booster/blob/development/pb_schema.json) then you would need to fill keys for the oauth to start working.

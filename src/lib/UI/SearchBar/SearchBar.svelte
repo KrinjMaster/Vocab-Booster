@@ -4,7 +4,7 @@
   import { getNewWord } from '$lib/store/collectionCreation'
   import { notifier } from '@beyonk/svelte-notifications'
 
-  const { form, handleChange, handleSubmit } = createForm({
+  const { form, handleChange, handleSubmit, isSubmitting, state } = createForm({
     initialValues: {
       word: '',
     },
@@ -22,6 +22,8 @@
       }
     },
   })
+
+  $: console.log($state.isSubmitting)
 </script>
 
 <form on:submit={handleSubmit} class="flex gap-2.5">
@@ -34,9 +36,15 @@
     bind:value={$form.word}
   />
   <button
-    class={`btn  btn-lg ${
+    class={`btn  btn-lg w-20 ${
       $form.word.length < 1 ? 'btn-disabled' : 'btn-primary '
     }`}
-    type="submit">Add</button
+    type="submit"
   >
+    {#if $isSubmitting}
+      <span class="loading loading-spinner"></span>
+    {:else}
+      Add
+    {/if}
+  </button>
 </form>

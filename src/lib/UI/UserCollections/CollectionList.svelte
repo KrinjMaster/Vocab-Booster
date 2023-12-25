@@ -26,12 +26,16 @@
           class="flex w-full justify-between gap-1.5 font-bold text-lg uppercase items-center"
         >
           <div class="flex flex-col gap-1.5">
-            <h1 class="text-5xl font-bold">{collection.name}</h1>
+            <h1 class="text-5xl font-bold text-left">{collection.name}</h1>
             <div class="flex gap-1.5">
-              {#each collection.words as word, index (index)}
+              {#each collection.words.slice(0, 10) as word, index (index)}
                 <p class="text-primary">
                   {word[0].word}
-                  {collection.words.length - 1 !== index ? ',' : ''}
+                  {9 !== index
+                    ? ','
+                    : 9 === collection.words.length
+                      ? ''
+                      : `and ${collection.words.length - 9} more`}
                 </p>
               {/each}
             </div>
