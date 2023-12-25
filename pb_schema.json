@@ -64,6 +64,7 @@
       "manageRule": null,
       "minPasswordLength": 8,
       "onlyEmailDomains": null,
+      "onlyVerified": false,
       "requireEmail": false
     }
   },
@@ -95,7 +96,9 @@
         "required": false,
         "presentable": false,
         "unique": false,
-        "options": {}
+        "options": {
+          "maxSize": 5242880
+        }
       },
       {
         "system": false,

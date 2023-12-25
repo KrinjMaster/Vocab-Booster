@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, setContext } from 'svelte'
+  import { onMount } from 'svelte'
   import { useUser } from '$lib/store/user'
   import { setCollections } from '$lib/store/collections'
   import CollectionList from '$lib/UI/UserCollections/CollectionList.svelte'
@@ -27,7 +27,13 @@
     <h1 class="text-4xl font-extrabold">{data.user.name}</h1>
     {#if data.user.id === $useUser?.id}
       <button class="btn btn-error" on:click={handleLogOut}>Log out</button>
+    {:else}
+      <button class="btn btn-disabled">Log out</button>
     {/if}
   </div>
-  <CollectionList userId={data.user.id} />
+  {#if $useUser}
+    <CollectionList userId={data.user.id} />
+  {:else}
+    <span class="loading loading-spinner w-48 m-auto"></span>
+  {/if}
 </section>

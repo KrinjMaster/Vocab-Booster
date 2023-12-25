@@ -7,7 +7,8 @@
   class="w-screen h-screen flex flex-col items-center justify-center px-10 gap-5"
 >
   <h1 class="text-6xl font-bold text-center">
-    Platform which helps <span class="text-primary">learning</span> new words !
+    Platform which helps <span class="text-primary">improving</span> your vocabulary
+    !
   </h1>
   <p class="text-xl">
     You can see all of your collections in your <a
