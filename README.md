@@ -1,27 +1,13 @@
 # Vocab Booster
 
-## Host project locally
+A flashcard app for building English vocabulary.
 
-Once you've cloned a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), you can start a development server:
+🌐 Live: [your-link-here]
 
-```bash
- npm run dev
+## Features
+- Create and manage word collections
+- Review sessions with flashcard-style interface
+- Persistent storage via PocketBase
 
- # or start the server and open the app in a new browser tab
- npm run dev -- --open
-```
-
-## Host database locally
-
-To host db locally you would need to go to `~/Vocab-Booster/db/` and then run this command in terminal
-
-```bash
- ./pocketbase serve
-
- # if you want to see more logs
- ./pocketbase serve --debug
-```
-
-## Database
-
-for the database to work you would need to install [pocketbase](https://pocketbase.io) and import [database schema](https://github.com/KrinjMaster/Vocab-Booster/blob/development/pb_schema.json) then you would need to fill keys for the oauth to start working.
+## Stack
+Svelte · PocketBase · REST API
